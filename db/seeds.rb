@@ -28,12 +28,12 @@ csv_file_moderna = File.read("/Users/petercrawford/Development/code/Mod3/Phase3-
 csv_moderna = CSV.parse(csv_file_moderna, :headers => false)
 csv_moderna.each do |row|
     # binding.pry
-    Statevaccine.create({allocation_date: row[1], first_dose_allocation: row[2], second_dose_allocation: row[2], state_id: State.find_by(name: row[0]).id, vaccine_id: Vaccine.find_by(name: "Moderna").id})
+    Statevaccine.create({allocation_date: row[1], first_dose_allocation: row[2], second_dose_allocation: row[3], state_id: State.find_by(name: row[0]).id, vaccine_id: Vaccine.find_by(name: "Moderna").id})
 end
 
 csv_file_pfizer = File.read("/Users/petercrawford/Development/code/Mod3/Phase3-Project/Phase3-backend/db/Moderna.csv")
 csv_pfizer = CSV.parse(csv_file_pfizer, :headers => false)
 csv_pfizer.each do |row|
     # binding.pry
-    Statevaccine.create({allocation_date: row[1], first_dose_allocation: row[2], second_dose_allocation: row[2], state_id: State.find_by(name: row[0]).id, vaccine_id: Vaccine.find_by(name: "Pfizer").id})
+    Statevaccine.create({allocation_date: row[1], first_dose_allocation: row[2], second_dose_allocation: row[3], state_id: State.find_by(name: row[0]).id, vaccine_id: Vaccine.find_by(name: "Pfizer").id})
 end
